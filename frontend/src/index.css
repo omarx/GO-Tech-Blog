@@ -1,0 +1,115 @@
+body{
+  background-color: #d9ead3 !important;
+  margin:0;
+  padding:0;
+}
+
+header{
+  background-color: #231010 !important;
+  padding:.5%;
+}
+
+nav> ul>li{
+  list-style-type: none;
+  display: inline;
+  justify-content: space-between;
+}
+
+nav> ul> li> a{
+  text-decoration: none;
+  color:#d9ead3;
+  font-size: 1.5em;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+ #logout{
+   background-color: #231010;
+    text-decoration: none;
+    color:#d9ead3;
+    font-size: 1.5em;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-color: #231010;
+}
+
+#Logo{
+  border: 2px solid grey;
+  border-radius: 15px;
+  color:#231010;
+  background-color: #d9ead3;
+  height:.5%;
+  width:15em;
+  text-align: center;
+  box-shadow: 10px 10px grey;
+  margin-bottom: 1.5rem;
+  margin-left: 4%;
+}
+
+#Logo> h1{
+  font-size: 2em;
+}
+
+#logo-link{
+  text-decoration: none;
+  color:#231010;
+}
+
+.post{
+  justify-self:center;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+}
+
+.card-border{
+  border:2px solid #231010;
+  margin:1.5em;
+  margin-bottom:2em;
+}
+
+.card-color{
+  background-color:#231010;
+}
+
+.card-text-color{
+  color:#d9ead3;
+}
+
+.card-text-color-alt{
+  color:black;
+}
+
+.card-body-color{
+  background-color:#d9ead3;
+}
+
+.author{
+  font-size:0.9em;
+}
+.card-body-text{
+  padding:10px;
+  font-size:1.5rem;
+}
+
+.no-underline{
+  text-decoration: none;
+  font-size:1.2em;
+}
+.no-underline-no-font{
+  text-decoration: none;
+}
+
+.btm-position {
+  margin-top: 2%;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom:10px; /* It's already set to 10, which provides a 10px margin from the bottom */
+  z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+
+.not-visible{
+  display:none !important;
+}
