@@ -10,9 +10,10 @@ import (
 // RegisterRoutes sets up all routes for the application
 func RegisterRoutes(router *gin.Engine, dbConfig *connect.DBConfig) {
 	// Public routes
-	publicRoutes := router.Group("/api/") // Create a RouterGroup for public routes
+	publicRoutes := router.Group("/api/")
 	api.RegisterPublicRoutes(publicRoutes, dbConfig)
 	api.RegisterPublicPostRoutes(publicRoutes, dbConfig)
+
 	// Protected routes
 	protectedRoutes := router.Group("/api/")
 	protectedRoutes.Use(utils.WithAuth())

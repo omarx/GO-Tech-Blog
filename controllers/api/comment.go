@@ -46,7 +46,6 @@ func handleCreateComment(c *gin.Context, dbConfig *connect.DBConfig) {
 		return
 	}
 
-	// Convert userID to uint
 	userIDUint, ok := userID.(uint)
 	if !ok {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Invalid user ID in session."})
@@ -65,7 +64,6 @@ func handleCreateComment(c *gin.Context, dbConfig *connect.DBConfig) {
 		return
 	}
 
-	// Return the created comment as the response
 	c.JSON(http.StatusCreated, gin.H{
 		"message": "Comment created successfully.",
 		"comment": comment,
@@ -121,14 +119,12 @@ func handleUpdateComment(c *gin.Context, dbConfig *connect.DBConfig) {
 		return
 	}
 
-	// Convert userID to uint
 	userIDUint, ok := userID.(uint)
 	if !ok {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Invalid user ID in session."})
 		return
 	}
 
-	// Parse the request body
 	var reqBody struct {
 		Body string `json:"body" binding:"required"`
 	}

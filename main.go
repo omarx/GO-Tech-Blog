@@ -36,10 +36,8 @@ func main() {
 		port = "8005"
 	}
 
-	// Initialize Gin router
 	router := gin.Default()
 
-	// Enable CORS middleware
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:5173"},                   // Frontend URL
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}, // Include OPTIONS for preflight requests
@@ -59,14 +57,11 @@ func main() {
 
 	gin.SetMode(gin.DebugMode)
 
-	// Set up session middleware
 	store := cookie.NewStore([]byte("secret"))
 	router.Use(sessions.Sessions("mysession", store))
 
-	// Serve the static frontend files from the "dist" directory
 	router.Static("/static", "./frontend/build/")
 
-	// Serve the index.html file for all other routes (fallback for React routing)
 	router.NoRoute(func(c *gin.Context) {
 		c.File("./frontend/build/index.html")
 	})
@@ -74,6 +69,5 @@ func main() {
 	// Register routes
 	routes.RegisterRoutes(router, dbConfig)
 
-	// Start the server
 	router.Run(":" + port)
 }

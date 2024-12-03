@@ -1,7 +1,7 @@
 package connect
 
 import (
-	"TechBlog/models" // Import your models package
+	"TechBlog/models"
 	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -24,9 +24,8 @@ func DBConnect(user string, pass string, dbname string) (*DBConfig, error) {
 		return nil, fmt.Errorf("failed to connect to the database: %w", err)
 	}
 
-	// Automatically migrate the models
 	err = db.AutoMigrate(
-		&models.User{}, // Replace with your actual models
+		&models.User{},
 		&models.Post{},
 		&models.Comment{},
 	)
